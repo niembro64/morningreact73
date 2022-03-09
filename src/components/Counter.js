@@ -21,7 +21,6 @@ class Counter extends Component {
         // var text = this.props.text;
         return (
             <>
-                <div>{text}</div>
                 <div className="box">
                     {text}
                     <h1>{this.state.counter}</h1>
