@@ -1,17 +1,32 @@
-import React, {Component} from 'react'; 
-
+import React, { Component } from "react";
 
 class Counter extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+        this.state = {
+            counter: 0,
+        };
     }
 
-    render(){
-        const {text} = this.props;
+    increaseCounter = () => {
+        // console.log("Clicked!");
+
+        this.setState({
+            counter: this.state.counter + 1,
+        });
+    };
+
+    render() {
+        const { text } = this.props;
         // var text = this.props.text;
-        return(
+        return (
             <>
                 <div>{text}</div>
+                <div className="box">
+                    {text}
+                    <h1>{this.state.counter}</h1>
+                    <button onClick={this.increaseCounter}>Click Me!!</button>
+                </div>
             </>
         );
     }
